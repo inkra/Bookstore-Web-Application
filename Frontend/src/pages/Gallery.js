@@ -43,7 +43,7 @@ export default class Gallery extends Component {
 
     setUser = () => {
         // cek eksistensi dari session storage
-        if(sessionStorage.getItem("user") === null){
+        if(localStorage.getItem("user") === null){
         // kondisi jika session storage "user" belum dibuat
         let prompt = window.prompt("Masukkan Nama Anda","")
         if(prompt === null || prompt === ""){
@@ -52,14 +52,14 @@ export default class Gallery extends Component {
         }else{
         // jika user telah mengisikan namanya
         // simpan nama user ke session storage
-        sessionStorage.setItem("user", prompt)
+        localStorage.setItem("user", prompt)
         // simpan nama user ke state.user
         this.setState({user: prompt})
         }
         }else{
         // kondisi saat session storage "user" telah dibuat
         // akses nilai dari session storage "user"
-        let name = sessionStorage.getItem("user")
+        let name = localStorage.getItem("user")
         this.setState({user: name})
         }
         }
