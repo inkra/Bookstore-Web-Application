@@ -19,7 +19,7 @@ class Cart extends React.Component {
         tempCart = JSON.parse(localStorage.getItem("cart"))
         }
         // memanggil data user pada localStorage
-        let userName = sessionStorage.getItem("user")
+        let userName = localStorage.getItem("user")
         // kalkulasi total harga
         let totalHarga = 0;
         tempCart.map(item => {
